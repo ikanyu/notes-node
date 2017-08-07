@@ -1,16 +1,7 @@
 console.log('Starting notes.js');
 
-const fs = require('fs');
-
 var addNote = (title, body) => {
-  var notes = [];
-  var note = {
-    title,
-    body
-  };
-  
-  notes.push(note);
-  fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+  console.log('Adding note', title, body);
 };
 
 var getAll = () => {
@@ -19,4 +10,15 @@ var getAll = () => {
 
 var getNote = (title) => {
   console.log('Getting note', title);
+};
+
+var removeNote = (title) => {
+  console.log('Remove note', title);
+};
+
+module.exports = {
+  addNote,
+  getAll,
+  getNote,
+  removeNote
 };
